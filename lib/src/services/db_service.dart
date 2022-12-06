@@ -13,4 +13,13 @@ class DBService {
     String? lang = box.get("lang");
     return lang;
   }
+
+  static Future<void> storeTheme(bool theme) async {
+    await box.put("theme", theme);
+  }
+
+  static bool? loadTheme() {
+    bool? theme = box.get("theme");
+    return theme;
+  }
 }
