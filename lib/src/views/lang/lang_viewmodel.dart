@@ -29,20 +29,7 @@ class LangViewModel extends ChangeNotifier {
   }
 
   void setLocal(String lang) async {
-    switch(lang) {
-      case "uz":
-        currentLang = "uz";
-        break;
-      case "en":
-        currentLang = "en";
-        break;
-      case "ru":
-        currentLang = "ru";
-        break;
-      default:
-        currentLang = "uz";
-    }
-
+    currentLang = lang;
     await DBService.storeLang(lang);
     _locale = Locale(currentLang);
     notifyListeners();
